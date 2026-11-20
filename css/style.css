@@ -1,0 +1,463 @@
+/* ============================================================
+   Serial critique — feuille de style
+   ============================================================ */
+
+:root {
+	--orange: #f08a00;
+	--orange-fonce: #c46f00;
+	--violet: #6c4ad8;
+	--violet-clair: #efeafd;
+	--vert: #4d7a25;
+	--texte: #24212b;
+	--texte-discret: #6b6675;
+	--fond: #f6f4f9;
+	--carte: #ffffff;
+	--bordure: #e2dde9;
+	--rayon: 12px;
+	--ombre: 0 1px 3px rgba(30, 20, 60, 0.08), 0 4px 14px rgba(30, 20, 60, 0.05);
+	--largeur-max: 100%; /* largeur maximale du site : mettre par ex. 1200px pour le centrer */
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 1em;
+	background-color: var(--fond);
+	color: var(--texte);
+	font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+	line-height: 1.5;
+}
+
+a {
+	color: var(--violet);
+}
+
+a:hover {
+	color: var(--orange-fonce);
+}
+
+h2 {
+	margin-top: 0;
+}
+
+h3 {
+	margin-top: 1.5em;
+	border-bottom: 2px solid var(--violet-clair);
+	padding-bottom: 0.2em;
+}
+
+/* ----- en-tête ----- */
+header {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	padding: 1em 1.5em;
+	background: linear-gradient(120deg, var(--orange), #ffb347);
+	border-radius: var(--rayon);
+	box-shadow: var(--ombre);
+	max-width: var(--largeur-max);
+	margin: 0 auto;
+}
+
+header .logo img {
+	height: 3.5em;
+	width: auto;
+	display: block;
+}
+
+header h1 {
+	margin: 0;
+	font-size: 1.9em;
+	letter-spacing: 0.02em;
+}
+
+header h1 a {
+	color: #ffffff;
+	text-decoration: none;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+header .baseline {
+	margin: 0;
+	color: #3b2500;
+	font-weight: 600;
+}
+
+/* ----- disposition centrale ----- */
+#divCentral {
+	display: flex;
+	gap: 1em;
+	align-items: flex-start;
+	max-width: var(--largeur-max);
+	margin: 1em auto;
+}
+
+nav {
+	flex: 0 0 210px;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25em;
+	padding: 0.75em;
+	background-color: var(--carte);
+	border-radius: var(--rayon);
+	box-shadow: var(--ombre);
+	position: sticky;
+	top: 1em;
+}
+
+nav a {
+	display: block;
+	padding: 0.5em 0.8em;
+	border-radius: 8px;
+	color: var(--texte);
+	text-decoration: none;
+}
+
+nav a:hover {
+	background-color: var(--violet-clair);
+	color: var(--violet);
+}
+
+nav a.actif {
+	background-color: var(--violet);
+	color: #ffffff;
+	font-weight: 600;
+}
+
+main {
+	flex: 1;
+	min-width: 0;
+	padding: 1.5em 2em;
+	background-color: var(--carte);
+	border-radius: var(--rayon);
+	box-shadow: var(--ombre);
+}
+
+/* ----- pied de page ----- */
+footer {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+	justify-content: space-around;
+	align-items: center;
+	padding: 1em;
+	background-color: var(--vert);
+	color: #ffffff;
+	border-radius: var(--rayon);
+	max-width: var(--largeur-max);
+	margin: 0 auto;
+}
+
+footer a {
+	color: #ffffff;
+}
+
+/* ----- messages ----- */
+.message {
+	padding: 0.75em 1em;
+	border-radius: 8px;
+	border-left: 4px solid;
+}
+
+.message-succes {
+	background-color: #e8f6e3;
+	border-color: #3f9a2a;
+}
+
+.message-erreur {
+	background-color: #fdeaea;
+	border-color: #d23c3c;
+}
+
+.message-info,
+.fond-jaune {
+	background-color: #fff6d6;
+	border-color: #e2b100;
+}
+
+.discret {
+	color: var(--texte-discret);
+	font-size: 0.9em;
+}
+
+.vide {
+	color: var(--texte-discret);
+	font-style: italic;
+}
+
+/* ----- accueil ----- */
+.bandeau {
+	display: flex;
+	gap: 1.5em;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.bandeau > div {
+	flex: 1 1 260px;
+}
+
+.img-accueil {
+	flex: 1 1 260px;
+	max-width: 420px;
+	width: 100%;
+	height: auto;
+	border-radius: var(--rayon);
+}
+
+.stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+	gap: 0.75em;
+	margin: 1.5em 0;
+}
+
+.stats > div {
+	background-color: var(--violet-clair);
+	border-radius: var(--rayon);
+	padding: 0.8em;
+	text-align: center;
+}
+
+.stats .chiffre {
+	display: block;
+	font-size: 2em;
+	font-weight: 700;
+	color: var(--violet);
+	line-height: 1.1;
+}
+
+.bouton {
+	display: inline-block;
+	padding: 0.6em 1.2em;
+	background-color: var(--violet);
+	color: #ffffff;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.bouton:hover {
+	background-color: #5636b8;
+	color: #ffffff;
+}
+
+/* ----- catalogue des séries ----- */
+.grille {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 1em;
+}
+
+.carte {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4em;
+	padding: 1em;
+	border: 1px solid var(--bordure);
+	border-radius: var(--rayon);
+	text-decoration: none;
+	color: var(--texte);
+	transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+
+.carte:hover {
+	transform: translateY(-2px);
+	box-shadow: var(--ombre);
+	border-color: var(--violet);
+	color: var(--texte);
+}
+
+.carte-titre {
+	font-weight: 700;
+	font-size: 1.1em;
+}
+
+.carte-infos {
+	color: var(--texte-discret);
+	font-size: 0.9em;
+}
+
+.pastille {
+	align-self: flex-start;
+	padding: 0.15em 0.6em;
+	border-radius: 999px;
+	background-color: var(--violet-clair);
+	color: var(--violet);
+	font-size: 0.85em;
+	font-weight: 600;
+}
+
+/* ----- fiche d'une série ----- */
+.fil {
+	margin-top: 0;
+}
+
+.colonnes {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 0 2em;
+}
+
+.saison {
+	margin-bottom: 1em;
+}
+
+.saison ol {
+	margin: 0.3em 0 0;
+}
+
+.critique {
+	margin: 0.75em 0;
+	padding: 0.75em 1em;
+	background-color: var(--fond);
+	border-left: 4px solid var(--orange);
+	border-radius: 0 8px 8px 0;
+}
+
+.critique p {
+	margin: 0 0 0.3em;
+	font-size: 1.05em;
+}
+
+.critique footer {
+	display: block;
+	padding: 0;
+	margin: 0;
+	background: none;
+	color: var(--texte-discret);
+	font-size: 0.9em;
+	border-radius: 0;
+}
+
+.critique footer a {
+	color: var(--violet);
+}
+
+/* ----- formulaires ----- */
+.formulaire {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4em;
+	max-width: 520px;
+}
+
+.formulaire-ligne {
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: 1em;
+	max-width: none;
+}
+
+.formulaire-ligne > div {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3em;
+}
+
+label {
+	font-weight: 600;
+}
+
+input[type="text"],
+select,
+textarea {
+	font: inherit;
+	padding: 0.5em 0.7em;
+	border: 1px solid var(--bordure);
+	border-radius: 8px;
+	background-color: #ffffff;
+	color: var(--texte);
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+	outline: 2px solid var(--violet);
+	outline-offset: 1px;
+	border-color: var(--violet);
+}
+
+textarea {
+	resize: vertical;
+}
+
+input[type="submit"] {
+	align-self: flex-start;
+	font: inherit;
+	font-weight: 600;
+	padding: 0.55em 1.2em;
+	margin-top: 0.4em;
+	border: none;
+	border-radius: 8px;
+	background-color: var(--orange);
+	color: #ffffff;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: var(--orange-fonce);
+}
+
+/* ----- tableaux et listes ----- */
+table {
+	border-collapse: collapse;
+	margin-bottom: 1em;
+	width: 100%;
+}
+
+th,
+td {
+	border-bottom: 1px solid var(--bordure);
+	padding: 0.5em 0.7em;
+	text-align: left;
+	vertical-align: top;
+}
+
+th {
+	background-color: var(--violet-clair);
+}
+
+tbody tr:hover {
+	background-color: var(--fond);
+}
+
+.historique {
+	padding-left: 1.2em;
+}
+
+/* ----- petits écrans : menu au-dessus du contenu ----- */
+@media (max-width: 760px) {
+	body {
+		padding: 0.5em;
+	}
+
+	#divCentral {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	nav {
+		flex: none;
+		flex-direction: row;
+		flex-wrap: wrap;
+		position: static;
+	}
+
+	main {
+		padding: 1em;
+	}
+
+	header h1 {
+		font-size: 1.5em;
+	}
+
+	table {
+		display: block;
+		overflow-x: auto;
+	}
+}

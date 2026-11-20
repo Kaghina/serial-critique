@@ -1,0 +1,14 @@
+# identifiants privés de la base de données
+inc/config-bd.local.php
+
+# fichiers d'historique générés par le site
+historiques/*
+!historiques/.gitkeep
+
+# fichiers système / éditeurs
+.DS_Store
+__MACOSX/
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
